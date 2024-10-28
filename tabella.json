@@ -1,0 +1,34 @@
+[
+    {
+        "nome":"Giovanni",
+        "cognome":"Brambilla",
+        "eta": 18,
+        "indirizzo":"via Copernico 8",
+        "citta":"Pero",
+        "telefono": "247290"
+    },
+    {
+        "nome":"Giulia",
+        "cognome":"Bianchi",
+        "eta": 27,
+        "indirizzo":"via Cabella 5",
+        "citta":"Milano",
+        "telefono": "379207"
+    },
+    {
+        "nome":"Marco",
+        "cognome":"Gialli",
+        "eta": 67,
+        "indirizzo":"via Roma 78",
+        "citta":"Roma",
+        "telefono": "317001"
+    },
+    {
+        "nome":"Marcello",
+        "cognome":"Carbonaro",
+        "eta": 30,
+        "indirizzo":"via Cristiano Ronaldo 7",
+        "citta":"Lisbona",
+        "telefono": "789279"
+    }
+]
