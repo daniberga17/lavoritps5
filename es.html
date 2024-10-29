@@ -7,18 +7,22 @@
 </head>
 <body>
     <table id="tabella">
-        <tr>
-            <td>Nome</td>
-            <td>Cognome</td>
-            <td>Età</td>
-            <td>Indirizzo</td>
-            <td>Città</td>
-            <td>Telefono</td>
-        </tr>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Cognome</td>
+                <td>Età</td>
+                <td>Indirizzo</td>
+                <td>Città</td>
+                <td>Telefono</td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
     </table>
     <script>
         var xml=new XMLHttpRequest();
-        var tab=document.getElementById("tabella");
+        var tab=document.getElementById("tabella").getElemenByTagName("tbody")[0];
         xml.open("GET", "tabella.json", true);
         xml.onload=function(){
             if(xml.status==200){
