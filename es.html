@@ -22,7 +22,7 @@
     </table>
     <script>
         var xml=new XMLHttpRequest();
-        xml.open("GET", "tabella.json", true);
+        xml.open("GET", "https://daniberga17.github.io/lavoritps5/tabella.json", true);
         xml.onload=function(){
             if(xml.readyState==4 && xml.status==200){
                 var j=JSON.parse(xml.responseText);
