@@ -22,22 +22,22 @@
     </table>
     <script>
         var xml=new XMLHttpRequest();
-        var tab=document.getElementById("tabella").getElemenByTagName("tbody")[0];
         xml.open("GET", "tabella.json", true);
-        xml.onload=function(){
-            if(xml.status==200){
-                var dati=JSON.parse(xml.responseText);
-                for(i=0; i<dati.length; i++){
-                    var k=data[i];
+        xml.onreadyonstage=function(){
+            if(xml.readyState==4 && xml.status==200){
+                var j=JSON.parse(xml.responseText);
+                var t=document.getElementById("tabella").getElementsTagName("tbody")[0];
+                for(var i=0; i<j.length; i++){
+                    var k=s[k];
                     var r="<tr>"+
-                        "<td>"+k.Nome+"</td>"+
-                        "<td>"+k.Cognome+"</td>"+
-                        "<td>"+k.Eta+"</td>"+
-                        "<td>"+k.Indirizzo+"</td>"+
-                        "<td>"+k.Citta+"</td>"+
-                        "<td>"+k.Telefono+"</td>"+
-                        "</tr>";
-                    tab.innerHTML+=r;
+                        "<td>"+k.NOME+"</td>"+
+                        "<td>"+k.COGNOME+"</td>"+
+                        "<td>"+k.ETA+"</td>"+
+                        "<td>"+k.INDIRIZZO+"</td>"+
+                        "<td>"+k.CITTA+"</td>"+
+                        "<td>"+k.TELEFONO+"</td>"+
+                        "<tr>";
+                        t.innerHTML+=r;
                 }
             }
         }
