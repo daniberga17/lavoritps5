@@ -23,7 +23,7 @@
     <script>
         var xml=new XMLHttpRequest();
         xml.open("GET", "tabella.json", true);
-        xml.onreadyonstage=function(){
+        xml.onload=function(){
             if(xml.readyState==4 && xml.status==200){
                 var j=JSON.parse(xml.responseText);
                 var t=document.getElementById("tabella").getElementsTagName("tbody")[0];
