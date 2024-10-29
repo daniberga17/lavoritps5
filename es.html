@@ -26,9 +26,9 @@
         xml.onload=function(){
             if(xml.readyState==4 && xml.status==200){
                 var j=JSON.parse(xml.responseText);
-                var t=document.getElementById("tabella").getElementsTagName("tbody")[0];
+                var t=document.getElementById("tabella").getElementsByTagName("tbody")[0];
                 for(var i=0; i<j.length; i++){
-                    var k=s[i];
+                    var k=j[i];
                     var r="<tr>"+
                         "<td>"+k.nome+"</td>"+
                         "<td>"+k.cognome+"</td>"+
