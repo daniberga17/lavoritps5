@@ -24,13 +24,16 @@
             if(xml.status==200){
                 var dati=JSON.parse(xml.responseText);
                 for(i=0; i<dati.length; i++){
-                    var r=tab.insertRow();
-                    r.insertCell(0).textContent=data[i].Nome;
-                    r.insertCell(1).textContent=data[i].Cognome;
-                    r.insertCell(2).textContent=data[i].Eta;
-                    r.insertCell(3).textContent=data[i].Indirizzo;
-                    r.insertCell(4).textContent=data[i].Citta;
-                    r.insertCell(5).textContent=data[i].Telefono;
+                    var k=data[i];
+                    var r="<tr>"+
+                        "<td>"+k.Nome+"</td>"+
+                        "<td>"+k.Cognome+"</td>"+
+                        "<td>"+k.Eta+"</td>"+
+                        "<td>"+k.Indirizzo+"</td>"+
+                        "<td>"+k.Citta+"</td>"+
+                        "<td>"+k.Telefono+"</td>"+
+                        "</tr>";
+                    tab.innerHTML+=r;
                 }
             }
         }
