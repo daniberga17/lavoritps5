@@ -1,0 +1,14 @@
+[
+    {
+        "nome":"Giovanni",
+        "cognome":"Brambilla",
+        "eta": 18,
+        "indirizzo":"via Copernico 8",
+        "citta":"Pero",
+        "telefono": {
+                        "personale":"123",
+                        "casa":"456",
+                        "lavoro":"789"
+                    }
+    }
+]
