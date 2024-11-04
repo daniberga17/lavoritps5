@@ -6,24 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    <table id="table">
+    <table id="tabella">
         <thead>
-            <tr>
-                <th>NOME</th>
-                <th>COGNOME</th>
-                <th>ETA</th>
-                <th>INDIRIZZO</th>
-                <th>CITTA</th>
-                <th>TELEFONO</th>
-                <th>TEL CASA</th>
-                <th>TEL UFFICIO</th>
-            </tr>
+            <tr>nome</tr>
+            <tr>cognome</tr>
+            <tr>eta</tr>
+            <tr>indirizzo</tr>
+            <tr>citta</tr>
+            <tr>telefono.personale</tr>
+            <tr>telefono.casa</tr>
+            <tr>telefono.lavoro</tr>
         </thead>
+        <tbody>
+        </tbody>
     </table>
-
     <script>
         var xml=new XMLHttpRequest();
-        xml.open("GET", "tabella2.json"
+        xml.open("GET", "tabella2.json", true);
+        xml.onlaod=function(){
+            if(xml.readyState==4 && xml.status==200){
+                var j=JSON.parse(xml.responseText);
+                var t=document.getElementById("tabella").getElementsByTagName("tbody")[0];
+                for(var i=0; i<j.length; i++){
+                    var k=j[i];
+                    var r="<tr>"+
+                        "<td>"+k.nome+"</td>"+
+                        "<td>"+k.cognome+"</td>"+
+                        "<td>"+k.eta+"</td>"+
+                        "<td>"+k.indirizzo+"</td>"+
+                        "<td>"+k.citta+"</td>"+
+                        "<td>"+k.telefono.personale+"</td>"+
+                        "<td>"+k.telefono.casa+"</td>"+
+                        "<td>"+k.telefono.lavoro+"</td>"+
+                        "</tr>";
+                        t.innerHTML+=r;
+                }
+            }
+        }
+        xml.send();
     </script>
 </body>
 </html>
